@@ -10,13 +10,6 @@ class Profile {
 	static hasMany = [movies:Movie, tvSeries: TvSeries, novels: Novel, 
 		musicAlbums: MusicAlbum] 
 	static belongsTo = [user: User]
-	def Profile(ProfileCommand profileCommand){
-		name = profileCommand.getName()
-		surname = profileCommand.getSurname()
-		email = profileCommand.getEmail()
-		bio = profileCommand.getBio()
-		
-	}
     static constraints = {
 			name blank:false,maxSize:30
 			surname blank:false, maxSize:70

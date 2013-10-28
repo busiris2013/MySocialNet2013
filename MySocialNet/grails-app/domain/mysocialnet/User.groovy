@@ -4,8 +4,8 @@ import userprivacy.*
 
 @Mixin(Friend)
 class User extends Sociable {
-	private String  userName
-	private String  password
+	String  userName
+	String  password
 	Profile profile
 	PrivacyPolicy privacyPolicy = new PublicPrivacyPolicy()
 	Forum   forum = new Forum()
@@ -15,16 +15,15 @@ class User extends Sociable {
 	
 	public receiveFriendShipRequest(User user) {}
 	
-	def setPrivacyPolicy(PrivacyPolicy privacyPolicy) {
-			this.privacyPolicy = privacyPolicy
-			forum.setPrivacyPolicy(privacyPolicy)
-		}
-	
-	def User(UserCommand userCommand) {
-		userName = userCommand.getUserName()
-		password = userCommand.getPassword()
+ def setPrivacyPolicy(PrivacyPolicy privacyPolicy) {
+		this.privacyPolicy = privacyPolicy
+		forum.setPrivacyPolicy(privacyPolicy)
 	}
+	
+	
 	static constraints = {
+		userName(blank:false,unique:true,minSize:4)
+		password(validator:{pswd, user -> pswd != user.userName})
 		profile(nullable:true)
 		privacyPolicy(nullable:true)
 		forum(nullable:true)
