@@ -6,6 +6,6 @@ class Novel extends Taste{
 	
     static constraints = {
 		author blank:false, size:4..20
-		genre inList: ValidGenres.validNovelGenres
+		genre inList: ValidGenres.validNovelGenres()
    }
 }

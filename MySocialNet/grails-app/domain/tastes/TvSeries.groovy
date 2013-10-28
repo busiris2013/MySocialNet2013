@@ -5,7 +5,7 @@ class TvSeries extends Taste{
 	String genre
 	static constraints = {
 		director nullable:false
-		genre inList: ValidGenres.validTvSeriesGenres
+		genre inList: ValidGenres.validTvSeriesGenres()
 		
     }
 }

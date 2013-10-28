@@ -5,6 +5,6 @@ class MusicAlbum extends Taste {
 	String genre
     static constraints = {		
 		artist blank:false, size:4..20
-		genre inList: ValidGenres.validMusicAlbumGenres
+		genre inList: ValidGenres.validMusicAlbumGenres()
   }
 }

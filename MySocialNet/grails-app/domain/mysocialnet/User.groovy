@@ -15,13 +15,18 @@ class User extends Sociable {
 	
 	public receiveFriendShipRequest(User user) {}
 	
- def setPrivacyPolicy(PrivacyPolicy privacyPolicy) {
+	def User(CreateUserCommand createUserCommand) {
+		userName = createUserCommand.getUserName()
+		password = createUserCommand.getPassword()
+	}
+	
+	def setPrivacyPolicy(PrivacyPolicy privacyPolicy) {
 		this.privacyPolicy = privacyPolicy
 		forum.setPrivacyPolicy(privacyPolicy)
 	}
 	
 	
-	static constraints = {
+	static constraints = {		
 		userName(blank:false,unique:true,minSize:4)
 		password(validator:{pswd, user -> pswd != user.userName})
 		profile(nullable:true)

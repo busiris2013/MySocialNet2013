@@ -16,4 +16,10 @@ class Profile {
 			email blank:false, email:true
 			bio size:10..80
 	 }
+	def Profile(CreateProfileCommand createProfileCommand) {
+		name = createProfileCommand.getName()
+		surname = createProfileCommand.getSurname()
+		email = createProfileCommand.getEmail()
+		bio = createProfileCommand.getBio()
+	}
 }

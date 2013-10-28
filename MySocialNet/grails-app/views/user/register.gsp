@@ -14,26 +14,26 @@
 			<dl>
 				<dt>User Name</dt>
 				<dd><g:textField name="userName"
-					value="${user?.userName}"
+					value="${createUserCommand?.userName}"
 					/></dd>
 					<dt>Password</dt>
 				<dd><g:passwordField name="password"
-					value="${user?.password}"/></dd>
+					value="${createUserCommand?.password}"/></dd>
 				<dt>Name</dt>
-					<dd><g:textField name="profile.name"
-						value="${user?.profile?.name}"/>
+					<dd><g:textField name="name"
+						value="${createProfileCommand?.name}"/>
 					</dd>
 				<dt>surname</dt>
-					<dd><g:textField name="profile.surname"
-						value="${user?.profile?.surname}"/>
+					<dd><g:textField name="surname"
+						value="${createProfileCommand?.surname}"/>
 					</dd>
 					<dt>email</dt>
-					<dd><g:textField name="profile.email"
-						value="${user?.profile?.email}"/>
+					<dd><g:textField name="email"
+						value="${createUserProfile?.email}"/>
 					</dd>
 				<dt>Bio</dt>
-				<dd><g:textArea name="profile.bio"
-					value="${user?.profile?.bio}"/></dd>
+				<dd><g:textArea name="bio"
+					value="${createProfileCommand?.bio}"/></dd>
 				<dt><g:actionSubmit  value="Register" action="register"/></dt>
 			</dl>
 		</g:form>
